@@ -4,8 +4,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NoFoundComponent } from './no-found/no-found.component';
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, NoFoundComponent],
   imports: [
     BrowserModule,
     AppRoutingModule
