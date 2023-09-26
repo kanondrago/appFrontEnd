@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { PagesComponent } from './pages.component';
 import { AuthModule } from '../auth/auth.module';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -28,6 +29,7 @@ import { AuthModule } from '../auth/auth.module';
     RouterModule,
 
     AuthModule,
+    SharedModule,
   ]
 })
 export class PagesModule { }
