@@ -1,3 +1,4 @@
+import { formatDate } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+
+  today = new Date();
+
+  formatoFecha() {
+    return formatDate(this.today, 'dd-MM-yyyy', 'en-US')
+  }
 
 }
