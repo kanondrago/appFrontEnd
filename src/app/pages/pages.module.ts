@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { MatDialogModule } from '@angular/material/dialog'
+
 
 // Modulos
 import { AuthModule } from '../auth/auth.module';
@@ -30,10 +32,12 @@ import { CustomerComponent } from './customer/customer.component';
     CommonModule,
     FormsModule,
     RouterModule,
+    MatDialogModule,
 
     AuthModule,
     SharedModule,
     ComponentsModule,
-  ]
+  ],
+
 })
 export class PagesModule { }
