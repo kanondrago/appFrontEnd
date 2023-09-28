@@ -1,14 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AdminComponent } from './admin/admin.component';
-import { CustomerComponent } from './customer/customer.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { PagesComponent } from './pages.component';
+
+// Modulos
 import { AuthModule } from '../auth/auth.module';
 import { SharedModule } from '../shared/shared.module';
+import { ComponentsModule } from '../components/components.module';
 
-
+// Componentes
+import { PagesComponent } from './pages.component';
+import { AdminComponent } from './admin/admin.component';
+import { CustomerComponent } from './customer/customer.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +33,7 @@ import { SharedModule } from '../shared/shared.module';
 
     AuthModule,
     SharedModule,
+    ComponentsModule,
   ]
 })
 export class PagesModule { }
