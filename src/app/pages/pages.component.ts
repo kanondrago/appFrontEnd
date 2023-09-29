@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-declare function customInitFunction():any;
+// declare function customInitFunction():any;
 
 // asdasd
 @Component({
@@ -16,7 +16,7 @@ export class PagesComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    customInitFunction();
+    // customInitFunction();
   }
 
 }
