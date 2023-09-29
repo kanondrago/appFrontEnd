@@ -10,4 +10,7 @@ export class User {
     updated!:string;
     role!:Role;
     transactions!:Transaction[];
+
+    // No agregue la fecha de expiración
+    token!: string;
 }
