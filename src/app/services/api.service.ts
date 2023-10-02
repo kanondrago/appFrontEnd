@@ -7,6 +7,7 @@ import { ToastrService } from 'ngx-toastr';
 
 import { User } from '../models/User';
 import { UserLogin } from '../interfaces/UserLogin';
+import { USER_LOGIN_URL } from 'src/constants/urls';
 
 
 @Injectable({
@@ -30,18 +31,20 @@ export class ApiService {
   }
 
   public login(userLogin: UserLogin): Observable<User> {
-    return this.http.post<User>('http://localhost:3000/login', userLogin).pipe(
+    // Here pipe dont break the flow of the return and just with tap we can show 
+    //  a message for the logged user
+    return this.http.post<User>(USER_LOGIN_URL, userLogin).pipe(
       tap({
         next: (user) => {
           this.setUserLocalStorage(user);
           this.userSubject.next(user);
           this.toastrService.success(
-            `Bienvenidos a Vacamarca ${user.username}`,
+            `Bienvenidos a 3DDIGITALVENUE ${user.username}`,
             'Logeo exitoso'
           )
         },
         error: (errorResponse) => {
-          this.toastrService.error(errorResponse.error, 'Logeo Fallido');
+          this.toastrService.error(errorResponse.error, 'Logeo Fallido - vuelva a intentarlo');
         }
       })
     ) 
