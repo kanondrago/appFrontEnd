@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit{
   get fc(){
     return this.loginForm.controls;
   }
-  ///////////// Getter property ends /////////////
+  /////////// Getter property ends ///////////
 
   submit(){
     this.isSubmitted = true;
