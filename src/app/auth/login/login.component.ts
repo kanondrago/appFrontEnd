@@ -40,14 +40,14 @@ export class LoginComponent implements OnInit{
     this.isSubmitted = true;
     if(this.loginForm.invalid) return;
 
-    alert(`username: ${this.fc.username.value}, password: ${this.fc.password.value}`);
+    // alert(`username: ${this.fc.username.value}, password: ${this.fc.password.value}`);
 
-    // this.apiService.login(
-    //   {
-    //     username: this.fc.username.value, 
-    //     password: this.fc.password.value
-    //   }).subscribe(() => {
-    //     this.router.navigateByUrl(this.returnUrl);
-    //   })
+    this.apiService.login(
+      {
+        username: this.fc.username.value, 
+        password: this.fc.password.value
+      }).subscribe(() => {
+        this.router.navigateByUrl(this.returnUrl);
+      })
   }
 }
