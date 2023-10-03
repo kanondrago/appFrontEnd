@@ -7,7 +7,7 @@ import { ToastrService } from 'ngx-toastr';
 
 import { User } from '../models/User';
 import { UserLogin } from '../interfaces/UserLogin';
-import { USER_LOGIN_URL } from 'src/constants/urls';
+import { USER_LOGIN_URL } from '../constants/urls';
 
 
 @Injectable({
