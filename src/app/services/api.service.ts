@@ -39,7 +39,7 @@ export class ApiService {
           this.setUserLocalStorage(user);
           this.userSubject.next(user);
           this.toastrService.success(
-            `Bienvenidos a 3DDIGITALVENUE ${user.username}`,
+            `Bienvenidos a 3DDIGITALVENUE`,
             'Logeo exitoso'
           )
         },
