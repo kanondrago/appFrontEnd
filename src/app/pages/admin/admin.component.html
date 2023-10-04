@@ -30,12 +30,12 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
+                  <tr *ngFor="let valor of this.privateUser">
                     <td>
-                      23
+                      {{valor.id}}
                     </td>
                     <td>
-                      Herman Beck
+                      {{valor.username}}
                     </td>
                     <td>
                       May 15, 2015
@@ -181,7 +181,7 @@
                         <code style="color: blue;">3D<span class="font-weight-medium">D</span>V</code>
                     </p>
                 </div>
-                <div>
+                <!-- <div>
                     <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle toggle-dark btn-lg mb-0 me-0" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> This month </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
@@ -193,10 +193,10 @@
                         <a class="dropdown-item" href="#">Separated link</a>
                     </div>
                     </div>
-                </div>
+                </div> -->
                 </div>
                 <div class="d-sm-flex align-items-center mt-1 justify-content-between">
-                <div class="d-sm-flex align-items-center mt-4 justify-content-between"><h2 class="me-2 fw-bold">$36,2531.00</h2><h4 class="me-2">USD</h4><h4 class="text-success">(+1.37%)</h4></div>
+                <div class="d-sm-flex align-items-center mt-4 justify-content-between"><h2 class="me-2 fw-bold">€</h2><h4 class="me-2">EURO</h4><h4 class="text-success">(1.05 $)</h4></div>
                 <div class="me-3"><div id="marketing-overview-legend"></div></div>
                 </div>
                 <div class="chartjs-bar-wrapper mt-3">
@@ -223,63 +223,19 @@
                   </div>
                   <div class="mt-3">
                       <div class="wrapper d-flex align-items-center justify-content-between py-2 border-bottom">
-                      <div class="d-flex">
-                          <img class="img-sm rounded-10" src="images/faces/face1.jpg" alt="profile">
-                          <div class="wrapper ms-3">
-                          <p class="ms-1 mb-1 fw-bold">Brandon Washington</p>
-                          <small class="text-muted mb-0">162543</small>
-                          </div>
-                      </div>
-                      <div class="text-muted text-small">
-                          1h ago
-                      </div>
+                        <div class="d-flex">
+                            <div class="wrapper ms-3">
+                            <p class="ms-1 mb-1 fw-bold">johndoe</p>
+                            <small class="text-muted mb-0">800 €</small>
+                            </div>
+                        </div>
                       </div>
                       <div class="wrapper d-flex align-items-center justify-content-between py-2 border-bottom">
-                      <div class="d-flex">
-                          <img class="img-sm rounded-10" src="images/faces/face2.jpg" alt="profile">
+                        <div class="d-flex">
                           <div class="wrapper ms-3">
-                          <p class="ms-1 mb-1 fw-bold">Wayne Murphy</p>
-                          <small class="text-muted mb-0">162543</small>
+                          <p class="ms-1 mb-1 fw-bold">janedoe</p>
+                          <small class="text-muted mb-0">300 €</small>
                           </div>
-                      </div>
-                      <div class="text-muted text-small">
-                          1h ago
-                      </div>
-                      </div>
-                      <div class="wrapper d-flex align-items-center justify-content-between py-2 border-bottom">
-                      <div class="d-flex">
-                          <img class="img-sm rounded-10" src="images/faces/face3.jpg" alt="profile">
-                          <div class="wrapper ms-3">
-                          <p class="ms-1 mb-1 fw-bold">Katherine Butler</p>
-                          <small class="text-muted mb-0">162543</small>
-                          </div>
-                      </div>
-                      <div class="text-muted text-small">
-                          1h ago
-                      </div>
-                      </div>
-                      <div class="wrapper d-flex align-items-center justify-content-between py-2 border-bottom">
-                      <div class="d-flex">
-                          <img class="img-sm rounded-10" src="images/faces/face4.jpg" alt="profile">
-                          <div class="wrapper ms-3">
-                          <p class="ms-1 mb-1 fw-bold">Matthew Bailey</p>
-                          <small class="text-muted mb-0">162543</small>
-                          </div>
-                      </div>
-                      <div class="text-muted text-small">
-                          1h ago
-                      </div>
-                      </div>
-                      <div class="wrapper d-flex align-items-center justify-content-between pt-2">
-                      <div class="d-flex">
-                          <img class="img-sm rounded-10" src="images/faces/face5.jpg" alt="profile">
-                          <div class="wrapper ms-3">
-                          <p class="ms-1 mb-1 fw-bold">Rafell John</p>
-                          <small class="text-muted mb-0">Alaska, USA</small>
-                          </div>
-                      </div>
-                      <div class="text-muted text-small">
-                          1h ago
                       </div>
                       </div>
                   </div>
