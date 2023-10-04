@@ -9,9 +9,9 @@ import { DataService } from 'src/app/services/data.service';
 export class AdminComponent {
   constructor(private dataService: DataService) {
 
-    // this.dataService.getPrivateUsers().subscribe(data => {
-    //   console.log(data);
-    // })
+    this.dataService.getPrivateUsers().subscribe(data => {
+      console.log(data);
+    })
 
   }
 

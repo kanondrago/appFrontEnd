@@ -18,12 +18,13 @@ export class DataService {
 
   constructor(private http:HttpClient) {
 
-    // const userJSON = localStorage.getItem('user');
-    // const objeto = JSON.parse(userJSON);
-    // this.token = objeto['auth'].token
+    const userJSON = localStorage.getItem('user');
+    const objeto = JSON.parse(userJSON);
+    this.token = objeto['auth'].token
    }
 
   getPrivateUsers(): Observable<PrivateUser[]> {
-    return this.http.get<PrivateUser[]>(PRIVATE_USER);
+    const headers = { 'Authorization': 'Bearer '+this.token }
+    return this.http.get<PrivateUser[]>(PRIVATE_USER, {headers});
   }
 }
