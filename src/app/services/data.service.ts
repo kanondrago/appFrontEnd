@@ -15,22 +15,22 @@ import { PrivateUser } from '../models/PrivateUser';
 })
 export class DataService {
 
-  token!: string;
+  // token!: string;
 
   constructor(private http:HttpClient) {
 
-    const userJSON = localStorage.getItem('user');
-    const objeto = JSON.parse(userJSON);
-    this.token = objeto['auth'].token
+    // const userJSON = localStorage.getItem('user');
+    // const objeto = JSON.parse(userJSON);
+    // this.token = objeto['auth'].token
    }
 
-  getPrivateUsers(): Observable<PrivateUser[]> {
-    const headers = { 'Authorization': 'Bearer '+this.token }
+  getPrivateUsers(token:any): Observable<PrivateUser[]> {
+    const headers = { 'Authorization': 'Bearer ' + token }
     return this.http.get<PrivateUser[]>(PRIVATE_USER, {headers});
   }
 
-  getUser(): Observable<User> {
-    const headers = { 'Authorization': 'Bearer '+this.token }
+  getUser(token:any): Observable<User> {
+    const headers = { 'Authorization': 'Bearer ' + token }
     return this.http.get<User>(USER_DATA, {headers});
   }
 

@@ -15,18 +15,21 @@ export class CustomerComponent implements OnInit {
 
   transacciones: Transaction[];
   totalTransacciones=0;
+  token='';
 
   constructor(private diagloRef: MatDialog, private dataService: DataService) {
 
-    this.dataService.getUser().subscribe(data => {
+    const userJSON = localStorage.getItem('user');
+    const objeto = JSON.parse(userJSON);
+    this.token = objeto['auth'].token
+    console.log(this.token);
+
+
+    this.dataService.getUser(this.token).subscribe(data => {
       console.log(data);
-
       this.transacciones = data['data'].transactions;
-
       console.log(this.transacciones);
-
       this.totalTransacciones = this.sumarTransacciones();
-
       console.log(this.totalTransacciones);
     })
 

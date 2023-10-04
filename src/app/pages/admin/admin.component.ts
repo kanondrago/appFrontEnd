@@ -15,10 +15,16 @@ export class AdminComponent {
 
   privateUser: PrivateUser[];
   dataTabla:  string[];
+  token='';
 
   constructor(private dataService: DataService) {
 
-    this.dataService.getPrivateUsers().subscribe(datos => {
+    const userJSON = localStorage.getItem('user');
+    const objeto = JSON.parse(userJSON);
+    this.token = objeto['auth'].token
+    console.log(this.token);
+
+    this.dataService.getPrivateUsers(this.token).subscribe(datos => {
       this.privateUser = datos['data'];
       console.log(this.privateUser);
       
