@@ -4,9 +4,10 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 // Constants
-import { PRIVATE_USER } from '../constants/urls';
+import { PRIVATE_USER, USER_DATA } from '../constants/urls';
 
 // Modelos
+import { User } from '../models/User';
 import { PrivateUser } from '../models/PrivateUser';
 
 @Injectable({
@@ -27,4 +28,10 @@ export class DataService {
     const headers = { 'Authorization': 'Bearer '+this.token }
     return this.http.get<PrivateUser[]>(PRIVATE_USER, {headers});
   }
+
+  getUser(): Observable<User> {
+    const headers = { 'Authorization': 'Bearer '+this.token }
+    return this.http.get<User>(USER_DATA, {headers});
+  }
+
 }

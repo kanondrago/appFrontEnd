@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
+
+// Servicio
 import { DataService } from 'src/app/services/data.service';
+
+// Modelos
+import { PrivateUser } from 'src/app/models/PrivateUser';
 
 @Component({
   selector: 'app-admin',
@@ -7,12 +12,24 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent {
+
+  privateUser: PrivateUser[];
+  dataTabla:  string[];
+
   constructor(private dataService: DataService) {
 
-    this.dataService.getPrivateUsers().subscribe(data => {
-      console.log(data);
+    this.dataService.getPrivateUsers().subscribe(datos => {
+      this.privateUser = datos['data'];
+      console.log(this.privateUser);
+      
+      datos['data'].forEach((elemento:any) => {
+        console.log(elemento);
+
+      })
+
     })
 
   }
+
 
 }

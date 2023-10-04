@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog'
 import { TransaccionComponent } from 'src/app/components/transaccion/transaccion.component';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-customer',
@@ -9,7 +10,11 @@ import { TransaccionComponent } from 'src/app/components/transaccion/transaccion
 })
 export class CustomerComponent {
 
-  constructor(private diagloRef: MatDialog) {
+  constructor(private diagloRef: MatDialog, private dataService: DataService) {
+
+    this.dataService.getUser().subscribe(data => {
+      console.log(data);
+    })
 
   }
 
