@@ -16,6 +16,9 @@ export class CustomerComponent implements OnInit {
   transacciones: Transaction[];
   totalTransacciones=0;
   token='';
+  nombreUsuario:string;
+  tipoUsuario:string;
+  detalleUsuario:string;
 
   constructor(private diagloRef: MatDialog, private dataService: DataService) {
 
@@ -31,6 +34,12 @@ export class CustomerComponent implements OnInit {
       console.log(this.transacciones);
       this.totalTransacciones = this.sumarTransacciones();
       console.log(this.totalTransacciones);
+
+      this.nombreUsuario = data['data'].username;
+      this.tipoUsuario = data['data'].role.type;
+      this.detalleUsuario = data['data'].role.name;
+
+
     })
 
   }
