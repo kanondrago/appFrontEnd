@@ -25,15 +25,11 @@ export class CustomerComponent implements OnInit {
     const userJSON = localStorage.getItem('user');
     const objeto = JSON.parse(userJSON);
     this.token = objeto['auth'].token
-    console.log(this.token);
 
 
     this.dataService.getUser(this.token).subscribe(data => {
-      console.log(data);
       this.transacciones = data['data'].transactions;
-      console.log(this.transacciones);
       this.totalTransacciones = this.sumarTransacciones();
-      console.log(this.totalTransacciones);
 
       this.nombreUsuario = data['data'].username;
       this.tipoUsuario = data['data'].role.type;

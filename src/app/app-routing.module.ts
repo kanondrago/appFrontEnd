@@ -5,16 +5,10 @@ import { NoFoundComponent } from './no-found/no-found.component';
 import { CommonModule } from '@angular/common';
 import { PagesRoutingModule } from './pages/pages.routing';
 import { AuthRoutingModule } from './auth/auth.routing';
-const routes: Routes = [
-  // {
-  //   path: '',
-  //   component: AppComponent
-  // },
 
+const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch:'full' },
   { path: '**', component: NoFoundComponent },
-
-
 ];
 
 @NgModule({

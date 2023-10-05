@@ -17,16 +17,12 @@ export class TransaccionComponent implements OnInit {
   token='';
 
   constructor(
-    private diagloRef: MatDialog,
     private formBuilder: FormBuilder,
-    private activatedRoute: ActivatedRoute,
-    private router: Router,
     private dataService: DataService) {
 
       const userJSON = localStorage.getItem('user');
       const objeto = JSON.parse(userJSON);
       this.token = objeto['auth'].token
-      console.log(this.token);
 
   }
   ngOnInit(): void {
@@ -42,20 +38,13 @@ export class TransaccionComponent implements OnInit {
   }
 
   postTransactionEnvio(){
-    console.log('post');
-
-    console.log(this.fc.detail.value);
-    console.log(this.fc.amount.value);
 
     this.dataService.postTransaction(this.token,{
       detail: this.fc.detail.value,
       amount: this.fc.amount.value
     }).subscribe(data => {
-      console.log(data);
       location.reload();
     })
-    // location.reload();
-    // this.router.navigateByUrl('/admin/customer');
   }
   
 }

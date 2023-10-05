@@ -21,12 +21,8 @@ export class SidebarComponent {
     this.token = objeto['auth'].token
 
     this.dataService.getUser(this.token).subscribe(data => {
-      console.log('holaaaa')
-      console.log(data['data'].role.type);
-      console.log('holaaaa')
 
       this.tipoUsuario = data['data'].role.type
-      console.log(this.tipoUsuario);
       if(this.tipoUsuario==='admin'){
         this.isAuthAdmin=true;
       }

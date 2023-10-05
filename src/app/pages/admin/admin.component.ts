@@ -22,15 +22,12 @@ export class AdminComponent {
     const userJSON = localStorage.getItem('user');
     const objeto = JSON.parse(userJSON);
     this.token = objeto['auth'].token
-    console.log(this.token);
 
     this.dataService.getPrivateUsers(this.token).subscribe(datos => {
       this.privateUser = datos['data'];
-      console.log(this.privateUser);
       
       datos['data'].forEach((elemento:any) => {
         console.log(elemento);
-
       })
 
     })

@@ -14,7 +14,6 @@ export class HeaderComponent {
 
   constructor(private apiService:ApiService) {
     this.apiService.userObservable.subscribe(data => {
-      // console.log(data);
 
     try {
       this.nombreUsuario = data['user'].username;
