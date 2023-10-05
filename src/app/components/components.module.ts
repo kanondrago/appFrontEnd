@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TransaccionComponent } from './transaccion/transaccion.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 
 
@@ -12,7 +15,10 @@ import { TransaccionComponent } from './transaccion/transaccion.component';
     TransaccionComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    MatDialogModule,
+    ReactiveFormsModule
   ]
 })
 export class ComponentsModule { }

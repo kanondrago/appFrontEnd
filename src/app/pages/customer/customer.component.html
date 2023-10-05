@@ -2,52 +2,52 @@
 <div class="row">
     <div class="col-lg-8 d-flex flex-column">
         <div class="row flex-grow">
-        <div class="col-12 grid-margin stretch-card">
-            <div class="card card-rounded">
-            <div class="card-body">
-                <div class="d-sm-flex justify-content-between align-items-start">
-                <div>
-                    <h4 class="card-title card-title-dash">Listado de transacciones</h4>
-                    <p class="card-description">
-                        <code style="color: blue;">3D<span class="font-weight-medium">D</span>V - </code>
-                        <i class="icon-zoom-in" style="color: blue;"></i>
-                    </p>    
-                </div>
-                <div>
-                    <button class="btn btn-primary btn-lg text-white mb-0 me-0" type="button" (click)="openDialog()"><i class="mdi mdi-shape-circle-plus"></i>Agregar una transacción</button>
-                </div>
-                </div>
-                <div class="table-responsive  mt-1">
-                <table class="table select-table">
-                    <thead>
-                    <tr>
-                        <th>Transaction detail</th>
-                        <th>Created</th>
-                        <th>Amount(€)</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let valor of transacciones">
-                            <td>
-                                <div class="d-flex ">
-                                    <div>
-                                    <h6>{{valor.detail}}</h6>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                {{valor.created}}
-                            </td>
-                            <td>
-                                {{valor.amount}} €
-                            </td>
+            <div class="col-12 grid-margin stretch-card">
+                <div class="card card-rounded">
+                <div class="card-body">
+                    <div class="d-sm-flex justify-content-between align-items-start">
+                    <div>
+                        <h4 class="card-title card-title-dash">Listado de transacciones</h4>
+                        <p class="card-description">
+                            <code style="color: blue;">3D<span class="font-weight-medium">D</span>V - </code>
+                            <i class="icon-zoom-in" style="color: blue;"></i>
+                        </p>    
+                    </div>
+                    <div>
+                        <button class="btn btn-primary btn-lg text-white mb-0 me-0" type="button" (click)="openDialog()"><i class="mdi mdi-shape-circle-plus"></i>Agregar una transacción</button>
+                    </div>
+                    </div>
+                    <div class="table-responsive  mt-1">
+                    <table class="table select-table">
+                        <thead>
+                        <tr>
+                            <th>Transaction detail</th>
+                            <th>Created</th>
+                            <th>Amount(€)</th>
                         </tr>
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let valor of transacciones">
+                                <td>
+                                    <div class="d-flex ">
+                                        <div>
+                                        <h6>{{valor.detail}}</h6>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    {{valor.created}}
+                                </td>
+                                <td>
+                                    {{valor.amount}} €
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                </div>
                 </div>
             </div>
-            </div>
-        </div>
         </div>
     </div>
 

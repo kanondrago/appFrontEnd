@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 // Constants
-import { PRIVATE_USER, USER_DATA } from '../constants/urls';
+import { PRIVATE_USER, USER_DATA, USER_TRANSACTION } from '../constants/urls';
 
 // Modelos
 import { User } from '../models/User';
@@ -32,6 +32,11 @@ export class DataService {
   getUser(token:any): Observable<User> {
     const headers = { 'Authorization': 'Bearer ' + token }
     return this.http.get<User>(USER_DATA, {headers});
+  }
+
+  postTransaction(token:any, body:any): Observable<User> {
+    const headers = { 'Authorization': 'Bearer ' + token }
+    return this.http.post<User>(USER_TRANSACTION, body, {headers});
   }
 
 }
